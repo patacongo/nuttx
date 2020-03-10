@@ -49,13 +49,13 @@
 
 /* This defines the number of messages descriptors to allocate at each
  * "gulp."
- **/
+ */
 
 #define NUM_MSG_DESCRIPTORS 24
 
 /* This defines the number of messages to set aside for exclusive use by
  * interrupt handlers
- **/
+ */
 
 #define NUM_INTERRUPT_MSGS   8
 
@@ -99,20 +99,20 @@ extern "C"
 
 /* The g_msgfree is a list of messages that are available for general use.
  * The number of messages in this list is a system configuration item.
- **/
+ */
 
 EXTERN sq_queue_t  g_msgfree;
 
 /* The g_msgfreeInt is a list of messages that are reserved for use by
  * interrupt handlers.
- **/
+ */
 
 EXTERN sq_queue_t  g_msgfreeirq;
 
 /* The g_desfree data structure is a list of message descriptors available
  * to the operating system for general use. The number of messages in the
  * pool is a constant.
- **/
+ */
 
 EXTERN sq_queue_t  g_desfree;
 
