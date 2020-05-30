@@ -180,6 +180,14 @@ else
   fi
 fi
 
+# Make sure that the incdir binary is available (This is used early in Make.defs
+# files).
+
+make -C $nuttx/tools -f Makefile.host incdir INCDIR=$nuttx/tools/incdir.sh 1>/dev/null || \
+  { echo "ERROR: failed to build incdir"; exit 1; }
+
+# Then refresh the configuration
+
 echo "  Refreshing..."
 
 if grep -q "V=1" <<< "$*" ; then
